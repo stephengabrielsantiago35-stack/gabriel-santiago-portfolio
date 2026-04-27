@@ -1,0 +1,1482 @@
+/* ===================================================================
+   1. GLOBAL RESET & BASE STYLES
+   =================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fafafc;
+    color: #1A1A1A;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===================================================================
+   2. TYPOGRAPHY & UTILITIES
+   =================================================================== */
+.accent {
+    color: #2FA4E7;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #2FA4E7;
+    background: rgba(47, 164, 231, 0.08);
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1F4E79;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* ===================================================================
+   3. BUTTONS & INTERACTIVE ELEMENTS
+   =================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s;
+    border: none;
+}
+
+.btn-primary {
+    background: #1F4E79;
+    color: white;
+    box-shadow: 0 4px 12px rgba(31, 78, 121, 0.15);
+}
+
+.btn-primary:hover {
+    background: #2C6FA3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(31, 78, 121, 0.2);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid #cbd5e0;
+    color: #1F4E79;
+}
+
+.btn-outline:hover {
+    border-color: #2FA4E7;
+    background: rgba(47, 164, 231, 0.05);
+    transform: translateY(-2px);
+    color: #2FA4E7;
+}
+
+.btn-secondary {
+    background: #2FA4E7;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #2C6FA3;
+    transform: translateY(-2px);
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ===================================================================
+   4. HEADER & NAVIGATION
+   =================================================================== */
+.site-header {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: #1F4E79;
+    transition: 0.2s;
+    position: relative;
+}
+
+.nav-links a:hover, 
+.nav-links a.active-nav {
+    color: #2FA4E7;
+}
+
+.nav-links a.active-nav::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #2FA4E7;
+    border-radius: 2px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #1F4E79;
+}
+
+/* ===================================================================
+   5. FOOTER
+   =================================================================== */
+.site-footer {
+    background: #1A1A1A;
+    color: #a0aec0;
+    padding-top: 3rem;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.footer-about h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-about p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    background: rgba(255, 255, 255, 0.08);
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.2s;
+    color: #a0aec0;
+}
+
+.social-links a:hover {
+    background: #2FA4E7;
+    transform: translateY(-3px);
+    color: white;
+}
+
+.footer-links h4, 
+.footer-contact h4 {
+    color: #2FA4E7;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-links a, 
+.footer-contact p {
+    font-size: 0.9rem;
+    transition: 0.2s;
+    color: #a0aec0;
+}
+
+.footer-links a:hover {
+    color: #2FA4E7;
+    padding-left: 4px;
+}
+
+.footer-contact p i {
+    width: 28px;
+    margin-right: 6px;
+    color: #2FA4E7;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid #2d3748;
+    font-size: 0.8rem;
+    color: #718096;
+}
+
+.footer-bottom i {
+    color: #2FA4E7;
+}
+
+/* ===================================================================
+   6. HOMEPAGE - HERO SECTION
+   =================================================================== */
+.hero {
+    padding: 4rem 0 3rem;
+    background: #ffffff;
+}
+
+.hero-grid {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1.2;
+}
+
+.hero-badge {
+    background: rgba(47, 164, 231, 0.08);
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #2FA4E7;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #1F4E79;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.hero-stats div {
+    font-weight: 500;
+    color: #1F4E79;
+}
+
+.hero-stats span {
+    font-weight: 800;
+    font-size: 1.6rem;
+    display: block;
+    color: #2FA4E7;
+}
+
+.hero-image {
+    flex: 0.9;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wrapper {
+    width: 320px;
+    height: 320px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ===================================================================
+   7. HOMEPAGE - SKILLS SECTION
+   =================================================================== */
+.skills {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skill-card {
+    background: #ffffff;
+    padding: 2rem 1.8rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #2FA4E7;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: #2FA4E7;
+    margin-bottom: 1.2rem;
+}
+
+.skill-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    color: #1F4E79;
+}
+
+.skill-card p {
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ===================================================================
+   8. HOMEPAGE - FEATURED WORK PREVIEW
+   =================================================================== */
+.featured-work {
+    padding: 5rem 0;
+    background: #ffffff;
+}
+
+.work-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.preview-item {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.25s;
+    border: 1px solid #e2e8f0;
+}
+
+.preview-item:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+    border-color: #2FA4E7;
+}
+
+.preview-item h3 {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #1F4E79;
+}
+
+.preview-item p {
+    color: #4a5568;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.preview-link {
+    font-weight: 600;
+    color: #2FA4E7;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.preview-link:hover {
+    gap: 0.6rem;
+    color: #1F4E79;
+}
+
+/* ===================================================================
+   9. IMAGE SLIDER FOR HOMEPAGE PROJECTS
+   =================================================================== */
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    background: linear-gradient(135deg, #1F4E79 0%, #2C6FA3 100%);
+}
+
+.slider-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    transition: transform 0.4s ease-in-out;
+    will-change: transform;
+}
+
+.slide {
+    min-width: 100%;
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1F4E79;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+    opacity: 0;
+}
+
+.image-slider:hover .slider-btn {
+    opacity: 1;
+}
+
+.slider-btn:hover {
+    background: #2FA4E7;
+    color: white;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dot.active {
+    width: 24px;
+    border-radius: 4px;
+    background: white;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* ===================================================================
+   10. VIDEO CONTAINER
+   =================================================================== */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    background: #1A1A1A;
+}
+
+.preview-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.video-container:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-overlay i {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================================================================
+   11. HOMEPAGE - TESTIMONIALS SECTION
+   =================================================================== */
+.testimonials {
+    padding: 5rem 0;
+    background: #f8fafc;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    transition: 0.2s;
+}
+
+.testimonial-card:hover {
+    border-color: #2FA4E7;
+}
+
+.quote-icon {
+    font-size: 1.8rem;
+    color: #2FA4E7;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    color: #2d3748;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: #1F4E79;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* ===================================================================
+   12. PAGE HEADER (Internal Pages)
+   =================================================================== */
+.page-header {
+    background: #f8fafc;
+    padding: 3rem 0;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #1F4E79;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #4a5568;
+}
+
+/* ===================================================================
+   13. WORK PAGE - PROJECTS GRID
+   =================================================================== */
+.projects-section {
+    padding: 3rem 0;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.3rem;
+    border: 1.5px solid #e2e8f0;
+    background: white;
+    border-radius: 40px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    color: #1F4E79;
+}
+
+.filter-btn:hover,
+.filter-btn.active-filter {
+    background: #1F4E79;
+    border-color: #1F4E79;
+    color: white;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.work-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: #2FA4E7;
+}
+
+.card-img {
+    background: #1F4E79;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: white;
+}
+
+.work-card h3 {
+    font-size: 1.3rem;
+    padding: 1rem 1.5rem 0.25rem;
+    color: #1F4E79;
+}
+
+.work-card p {
+    padding: 0 1.5rem 0.5rem;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.tech-tags {
+    padding: 0 1.5rem 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    font-size: 0.7rem;
+    background: rgba(47, 164, 231, 0.08);
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    color: #2FA4E7;
+    font-weight: 500;
+}
+
+.card-footer {
+    padding: 0.5rem 1.5rem 1.5rem;
+}
+
+.project-link {
+    color: #2FA4E7;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-link:hover {
+    gap: 0.8rem;
+    color: #1F4E79;
+}
+
+/* ===================================================================
+   14. WORK PAGE - IMAGE SLIDERS
+   =================================================================== */
+.work-image-slider {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1F4E79 0%, #2C6FA3 100%);
+}
+
+.work-slider-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.work-slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.work-slide {
+    min-width: 100%;
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+}
+
+.work-slide img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.work-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1F4E79;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+    opacity: 0;
+}
+
+.work-image-slider:hover .work-slider-btn {
+    opacity: 1;
+}
+
+.work-slider-btn:hover {
+    background: #2FA4E7;
+    color: white;
+}
+
+.work-prev-btn {
+    left: 8px;
+}
+
+.work-next-btn {
+    right: 8px;
+}
+
+.work-slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+
+.work-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.work-dot.active {
+    width: 20px;
+    border-radius: 3px;
+    background: white;
+}
+
+.video-card-img {
+    background: #1A1A1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.work-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===================================================================
+   15. EXPERIENCE PAGE - TIMELINE & SKILLS
+   =================================================================== */
+.experience-section {
+    padding: 3rem 0;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-left: 2px solid #e2e8f0;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-item:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #2FA4E7;
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+    top: 0.2rem;
+}
+
+.timeline-year {
+    min-width: 100px;
+    font-weight: 700;
+    color: #2FA4E7;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: #1F4E79;
+}
+
+.timeline-content p {
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.skills-detailed {
+    padding: 3rem 0;
+    background: #f8fafc;
+}
+
+.skills-detailed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-detailed-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+}
+
+.skill-detailed-card i {
+    font-size: 2rem;
+    color: #2FA4E7;
+    margin-bottom: 1rem;
+}
+
+.skill-detailed-card h3 {
+    margin-bottom: 0.5rem;
+    color: #1F4E79;
+    font-size: 1.1rem;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: #2FA4E7;
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.skill-detailed-card p {
+    color: #2FA4E7;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ===================================================================
+   16. GALLERY PAGE
+   =================================================================== */
+.gallery-section {
+    padding: 3rem 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: #2FA4E7;
+}
+
+.gallery-img {
+    background: #1F4E79;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: white;
+}
+
+.gallery-card h3 {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem 0.25rem;
+    color: #1F4E79;
+}
+
+.gallery-card p {
+    padding: 0 1.5rem 1rem;
+    color: #4a5568;
+    font-size: 0.85rem;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(31, 78, 121, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+/* Lightbox Modal */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #a0aec0;
+}
+
+.close-lightbox:hover {
+    color: #ef4444;
+}
+
+.lightbox-icon {
+    font-size: 3rem;
+    color: #2FA4E7;
+    margin-bottom: 1rem;
+}
+
+.lightbox-content h3 {
+    margin-bottom: 0.8rem;
+    color: #1F4E79;
+}
+
+.lightbox-content p {
+    margin-bottom: 1.2rem;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+/* ===================================================================
+   17. CONTACT PAGE
+   =================================================================== */
+.contact-section {
+    padding: 3rem 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.contact-info {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.contact-info h3 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #1F4E79;
+}
+
+.contact-info > p {
+    margin-bottom: 2rem;
+    color: #4a5568;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-detail i {
+    font-size: 1.3rem;
+    color: #2FA4E7;
+    width: 35px;
+}
+
+.contact-detail strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: #1F4E79;
+    font-size: 0.9rem;
+}
+
+.contact-detail p {
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.contact-form h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    color: #1F4E79;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    background: white;
+    transition: all 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #2FA4E7;
+}
+
+.contact-form button {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Alert Messages */
+.alert {
+    padding: 0.8rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.9rem;
+}
+
+.alert-success {
+    background: #e6fffa;
+    border: 1px solid #38b2ac;
+    color: #234e52;
+}
+
+.alert-error {
+    background: #fff5f5;
+    border: 1px solid #fc8181;
+    color: #742a2a;
+}
+
+.alert ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+/* ===================================================================
+   18. SCROLL REVEAL ANIMATIONS
+   =================================================================== */
+.skill-card,
+.work-card,
+.testimonial-card,
+.timeline-item,
+.preview-item {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.skill-card.revealed,
+.work-card.revealed,
+.testimonial-card.revealed,
+.timeline-item.revealed,
+.preview-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #1F4E79;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background: #2FA4E7;
+    transform: translateY(-3px);
+}
+
+/* ===================================================================
+   19. RESPONSIVE DESIGN
+   =================================================================== */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-grid {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-content p {
+        max-width: 100%;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-stats {
+        justify-content: center;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 1.2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        gap: 1rem;
+        border-top: 1px solid #e2e8f0;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    .timeline-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .container {
+        padding: 0 1.2rem;
+    }
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .image-slider,
+    .slider-container,
+    .slider-track,
+    .slide,
+    .slide img,
+    .video-container,
+    .work-image-slider,
+    .work-slide,
+    .work-slide img {
+        height: 200px;
+    }
+    
+    .slider-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+        opacity: 0.7;
+    }
+    
+    .work-slider-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+        opacity: 0.7;
+    }
+    
+    .play-overlay i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .btn {
+        padding: 0.7rem 1.3rem;
+    }
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .image-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+}
