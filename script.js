@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contactForm');
     if (form) {
         // Initialize EmailJS with your public key
-        // REPLACE 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
         (function() {
             emailjs.init("j3_2-biLMkVGQsQrz");
         })();
@@ -269,31 +268,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const workGrid = document.getElementById('workGrid');
     if (workGrid) {
         const projects = [
-            { 
-                t: 'Brand Photography Portfolio', 
-                c: 'Photography', 
-                d: 'Luxury portraits, events, and product photography in Dubai.', 
-                i: 'fa-camera', 
-                imgs: ['photo1.jpg','photo2.jpg','photo3.jpg'], 
-                tech: ['Canon R5','Lightroom','Photoshop'] 
-            },
-            { 
-                t: 'Metaverse Age Training Institute', 
-                c: 'Videography', 
-                d: 'Promotional video for innovative educational programs.', 
-                i: 'fa-video', 
-                vid: 'images/welcome-to-metaverse.mov', 
-                tech: ['Premiere Pro','After Effects','Sony A7S III'] 
-            },
-            { 
-                t: 'E-Commerce Web Platform', 
-                c: 'Design', 
-                d: 'Brand identity, UI/UX design, and website development.', 
-                i: 'fa-store', 
-                imgs: ['platform1.png','platform2.png','platform3.png'], 
-                tech: ['HTML5','CSS3','React','Figma'] 
-            }
-        ];
+    { 
+        t: 'Brand Photography Portfolio', 
+        c: 'Photography', 
+        d: 'Luxury portraits, events, and product photography in Dubai.', 
+        i: 'fa-camera', 
+        imgs: ['photo1.jpg','photo2.jpg','photo3.jpg'], 
+        tech: ['Canon R5','Lightroom','Photoshop'] 
+    },
+    { 
+        t: 'Metaverse Age Training Institute', 
+        c: 'Videography', 
+        d: 'Promotional video for innovative educational programs.', 
+        i: 'fa-video', 
+        vid: 'images/welcome to metaverse (1).mp4', 
+        tech: ['Premiere Pro','After Effects','Sony A7S III'] 
+    },
+    { 
+        t: 'E-Commerce Web Platform', 
+        c: 'Design', 
+        d: 'Brand identity, UI/UX design, and website development.', 
+        i: 'fa-store', 
+        imgs: ['platform1.png','platform2.png','platform3.png'], 
+        tech: ['HTML5','CSS3','React','Figma'] 
+    }
+];
         
         projects.forEach(p => {
             const card = document.createElement('div'); 
