@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Gabriel Santiago Visual Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo for portfolio.png" alt="Gabriel Santiago Logo" style="height: 55px; width: auto; display: block;">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Frequently Asked Questions</h1>
+                <p>Everything you need to know about working with me</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-categories" id="faqCategories">
+                    <button class="faq-cat-btn active-cat" data-cat="all">All</button>
+                    <button class="faq-cat-btn" data-cat="general">General</button>
+                    <button class="faq-cat-btn" data-cat="photography">Photography</button>
+                    <button class="faq-cat-btn" data-cat="videography">Videography</button>
+                    <button class="faq-cat-btn" data-cat="design">Design & Dev</button>
+                    <button class="faq-cat-btn" data-cat="pricing">Pricing</button>
+                </div>
+
+                <div class="faq-grid" id="faqGrid">
+                    <div class="faq-card" data-cat="general">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Who are you and what do you do?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I'm Gabriel Santiago, a multidisciplinary creative based in Dubai, UAE. I specialize in photography, videography, graphic design, and web development — offering end-to-end visual solutions for brands, events, and individuals.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="general">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Where are you based and do you travel?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I'm based in Dubai, UAE, and yes — I'm available for travel! Whether it's within the UAE or internationally, I'm happy to discuss travel arrangements. Travel costs are typically added to the project quote for locations outside Dubai.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="general">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How quickly do you respond to inquiries?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I typically respond within 24-48 hours. For urgent requests, feel free to call or WhatsApp me at +971 50 397 2584.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="photography">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What type of photography do you offer?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I cover a wide range including:</p>
+                            <ul>
+                                <li><strong>Portrait Photography</strong> — Individual, family, and professional headshots</li>
+                                <li><strong>Event Photography</strong> — Corporate events, galas, and private celebrations</li>
+                                <li><strong>Product Photography</strong> — E-commerce, luxury goods, and catalog shoots</li>
+                                <li><strong>Lifestyle Photography</strong> — Brand storytelling and editorial work</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="photography">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What equipment do you use?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>My primary setup includes a Canon R5 mirrorless camera with professional RF lenses, Profoto lighting equipment for studio work, and DJI drones for aerial photography. I bring backup gear to every shoot.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="photography">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How long until I receive my photos?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Turnaround time depends on the project:</p>
+                            <ul>
+                                <li><strong>Portrait sessions:</strong> 5-7 business days</li>
+                                <li><strong>Events:</strong> 7-10 business days</li>
+                                <li><strong>Product shoots:</strong> 5-10 business days</li>
+                                <li><strong>Rush delivery:</strong> Available for an additional fee (2-3 business days)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="photography">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you provide raw files?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I typically deliver professionally edited, high-resolution JPEG files. RAW files are available upon request for an additional fee, as they represent unfinished work. I believe the editing process is an essential part of the final product.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="videography">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What video services do you offer?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I provide full video production including:</p>
+                            <ul>
+                                <li>Promotional & brand videos</li>
+                                <li>Event highlight reels</li>
+                                <li>Social media content (Reels, TikTok, YouTube Shorts)</li>
+                                <li>Training & educational videos</li>
+                                <li>Drone videography</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="videography">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What is included in your video packages?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Every video package includes pre-production planning, on-location filming (with professional lighting and audio), full editing with color grading, background music licensing, and 2 rounds of revisions. Final delivery is in your preferred format (MP4, MOV, etc.).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="videography">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How long does video production take?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Timeline varies by project complexity:</p>
+                            <ul>
+                                <li><strong>Short social clips (30-60 sec):</strong> 3-5 business days</li>
+                                <li><strong>Promotional videos (1-3 min):</strong> 7-14 business days</li>
+                                <li><strong>Event highlight reels:</strong> 5-10 business days</li>
+                                <li><strong>Full production projects:</strong> Discussed case-by-case</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="design">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What design services do you offer?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I offer a full range of graphic design and web development:</p>
+                            <ul>
+                                <li>Logo & brand identity design</li>
+                                <li>UI/UX design for websites and apps</li>
+                                <li>Marketing materials (brochures, flyers, social media graphics)</li>
+                                <li>Full-stack website development (HTML, CSS, JavaScript, React)</li>
+                                <li>E-commerce platform development</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="design">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What's your web development process?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>My development process follows 5 steps:</p>
+                            <ol>
+                                <li><strong>Discovery</strong> — Understanding your goals and requirements</li>
+                                <li><strong>Design</strong> — Wireframes and visual mockups in Figma</li>
+                                <li><strong>Development</strong> — Clean, responsive code</li>
+                                <li><strong>Review</strong> — Testing and your feedback</li>
+                                <li><strong>Launch</strong> — Deployment and handover</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="design">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you offer website maintenance?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! I offer ongoing maintenance packages that include content updates, security patches, performance monitoring, and minor feature additions. Monthly retainer options are available — let's discuss what fits your needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="pricing">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do you charge for your services?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Pricing depends on the project scope. I offer:</p>
+                            <ul>
+                                <li><strong>Project-based pricing</strong> — Fixed quote for defined deliverables</li>
+                                <li><strong>Hourly rates</strong> — For flexible or ongoing work</li>
+                                <li><strong>Day rates</strong> — Common for event photography/videography</li>
+                                <li><strong>Retainer packages</strong> — Monthly commitment for regular work</li>
+                            </ul>
+                            <p>Every project starts with a free consultation to understand your needs and provide a detailed quote.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="pricing">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you require a deposit?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, I typically require a 50% non-refundable deposit to secure your booking date, with the remaining 50% due upon project completion and before final file delivery. For larger projects, I can work out a milestone-based payment plan.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="pricing">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What payment methods do you accept?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I accept bank transfers (preferred in UAE), as well as PayPal and cash. For international clients, PayPal or Wise transfers work best. An invoice is provided for every transaction.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="pricing">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What is your cancellation policy?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Cancellations made 7+ days before the scheduled date receive a partial refund of the deposit (minus administrative fees). Cancellations within 7 days forfeit the deposit. Rescheduling is free if I have availability on the new date.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-card" data-cat="pricing">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you offer discounts for bulk work?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! I offer package discounts for ongoing work, multiple service bookings, and long-term retainer agreements. Let's discuss your needs and I'll create a customized quote that works for your budget.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-cta">
+                    <div class="faq-cta-content">
+                        <i class="fas fa-comments"></i>
+                        <h3>Still have questions?</h3>
+                        <p>I'm happy to discuss your project and answer anything on your mind.</p>
+                        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-about">
+                <h3>Gabriel Santiago</h3>
+                <p>Multidisciplinary creative based in Dubai, UAE.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Reach out</h4>
+                <p><i class="fas fa-envelope"></i> santiagogabrielstephen@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> +971 50 397 2584</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Gabriel Santiago</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
