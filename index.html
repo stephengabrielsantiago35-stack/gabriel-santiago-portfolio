@@ -222,7 +222,20 @@
             <p>© 2025 Gabriel Santiago — Designed & built with <i class="fas fa-heart"></i> in Dubai, UAE.</p>
         </div>
     </footer>
-
+<script>
+// Test if video file exists
+fetch('images/welcome to metaverse (1).mp4')
+    .then(response => {
+        if (response.ok) {
+            console.log('✅ Video file found!');
+        } else {
+            console.log('❌ Video file NOT found (404)');
+        }
+    })
+    .catch(error => {
+        console.log('❌ Error loading video:', error);
+    });
+</script>
     <script src="script.js"></script>
 </body>
 </html>
