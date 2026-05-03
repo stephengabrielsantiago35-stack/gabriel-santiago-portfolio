@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Gabriel Santiago | Creative Portfolio - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="page-transition-overlay" id="pageOverlay">
+    <img src="images/logo for portfolio.png" alt="Gabriel Santiago" class="transition-logo">
+    <div class="transition-loading-bar">
+        <div class="transition-loading-bar-fill"></div>
+    </div>
+    <span class="transition-text">Loading</span>
+</div>    <div class="content-wrapper" id="contentWrapper">
+
+        <header class="site-header">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo for portfolio.png" alt="Gabriel Santiago Logo" style="height: 55px; width: auto; display: block;">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container hero-grid">
+                    <div class="hero-content">
+                        <span class="hero-badge">Welcome to my universe</span>
+                        <h1>Turning <span class="accent">ideas</span> into digital reality through code & creativity.</h1>
+                        <p>I'm <strong>Gabriel Santiago</strong> — a Dubai-based creative who brings your vision to life through <strong>photography, videography, design, and development</strong>.</p>
+                        <div class="hero-buttons">
+                            <a href="work.html" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                            <a href="contact.html" class="btn btn-outline">Let's talk</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div><span>2+</span> Years Experience</div>
+                            <div><span>5+</span> Projects Completed</div>
+                            <div><span>100%</span> Client Satisfaction</div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-wrapper">
+                            <img src="images/myphoto.jpg" alt="Gabriel Santiago">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="skills">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">What I Do</span>
+                        <h2>My Creative & Technical Expertise</h2>
+                        <p>Combining code, design, and visual storytelling to create impactful digital experiences.</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-code"></i></div>
+                            <h3>Coding & Development</h3>
+                            <p>Front-end development, responsive websites, interactive web applications, and clean, maintainable code.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-camera"></i></div>
+                            <h3>Photography</h3>
+                            <p>Portrait, product, and event photography. Expert in composition, lighting, and post-processing.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-video"></i></div>
+                            <h3>Videography</h3>
+                            <p>Video production, editing, color grading, and motion graphics for social media and corporate content.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon"><i class="fas fa-pen-fancy"></i></div>
+                            <h3>Graphic Design</h3>
+                            <p>Brand identity, social media graphics, marketing materials, and UI/UX design principles.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-work">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Selected Creations</span>
+                        <h2>Recent projects that define my craft</h2>
+                        <p>A glimpse into my work across coding, photography, videography, and design.</p>
+                    </div>
+                    <div class="work-preview-grid">
+                        <div class="preview-item">
+                            <div class="image-slider">
+                                <div class="slider-container">
+                                    <div class="slider-track">
+                                        <div class="slide">
+                                            <img src="images/photo1.jpg" alt="Photography Project 1">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="images/photo2.jpg" alt="Photography Project 2">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="images/photo3.jpg" alt="Photography Project 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev-btn">‹</button>
+                                <button class="slider-btn next-btn">›</button>
+                                <div class="slider-dots"></div>
+                            </div>
+                            <h3>Brand Photography</h3>
+                            <p>Luxury portraits, events, and product photography in Dubai.</p>
+                            <a href="work.html" class="preview-link">View full portfolio →</a>
+                        </div>
+                        
+                        <div class="preview-item">
+                            <div class="custom-video-container">
+                                <div class="loading-indicator hidden">
+                                    <div class="spinner"></div>
+                                </div>
+                                <video id="homepage-video" class="preview-video" poster="images/video-thumbnail.jpg" preload="auto" playsinline muted loop>
+                                    <source src="images/welcome to metaverse (1).mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="custom-controls">
+                                    <button id="home-play-pause" class="control-button play-pause-btn">
+                                        <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                    </button>
+                                    <button id="home-rewind" class="control-button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.99 5V1l-5 5 5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6h-2c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+                                    </button>
+                                    <button id="home-fast-forward" class="control-button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.01 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z"/></svg>
+                                    </button>
+                                    <div class="progress-container">
+                                        <div class="progress-bar" id="home-progress-bar">
+                                            <div class="progress-filled" id="home-progress-filled"></div>
+                                        </div>
+                                        <div class="time-display">
+                                            <span id="home-current-time">0:00</span> / <span id="home-duration">0:00</span>
+                                        </div>
+                                    </div>
+                                    <button id="home-volume-btn" class="control-button">
+                                        <svg class="volume-high-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                                        <svg class="mute-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="display:none;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                                    </button>
+                                    <input type="range" id="home-volume-slider" class="volume-slider" min="0" max="1" step="0.1" value="1">
+                                </div>
+                            </div>
+                            <h3>Metaverse Age Training Institute</h3>
+                            <p>Promotional video for Metaverse Age Training Institute - Showcasing futuristic education and training programs.</p>
+                            <a href="work.html" class="preview-link">View full portfolio →</a>
+                        </div>
+                        
+                        <div class="preview-item">
+                            <div class="image-slider">
+                                <div class="slider-container">
+                                    <div class="slider-track">
+                                        <div class="slide">
+                                            <img src="images/platform1.png" alt="Logo Design">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="images/platform2.png" alt="Brand Identity">
+                                        </div>
+                                        <div class="slide">
+                                            <img src="images/platform3.png" alt="Website Mockup">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="slider-btn prev-btn">‹</button>
+                                <button class="slider-btn next-btn">›</button>
+                                <div class="slider-dots"></div>
+                            </div>
+                            <h3>E-Commerce Web Platform</h3>
+                            <p>Brand identity, UI/UX design, and custom websites.</p>
+                            <a href="work.html" class="preview-link">View full portfolio →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag">Kind Words</span>
+                        <h2>What clients & collaborators say</h2>
+                    </div>
+                    <div class="testimonial-grid">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"Gabriel's attention to detail is remarkable. He delivered a stunning website that perfectly captured our brand identity. His photography work was equally impressive."</p>
+                            <div class="testimonial-author">— Sarah Ahmed, Marketing Director</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>"The promotional video Gabriel created for Metaverse Age Training Institute was outstanding. He perfectly captured our vision for the future of education."</p>
+                            <div class="testimonial-author">— Dr. Marcus V., Founder of Metaverse Age Institute</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-container">
+                <div class="footer-about">
+                    <h3>Gabriel Santiago</h3>
+                    <p>Multidisciplinary creative blending code, photography, videography & design. Open for collaborations.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/stephengabrielsantiago35-stack" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/gabriel-stephen-santiago-94b96336a" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com/Pareng_gab_to" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/gabriel.santiago.973800" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="experience.html">Experience</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Reach out</h4>
+                    <p><i class="fas fa-envelope"></i> santiagogabrielstephen@gmail.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +971 50 397 2584</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Gabriel Santiago — Designed & built with <i class="fas fa-heart"></i> in Dubai, UAE.</p>
+            </div>
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
