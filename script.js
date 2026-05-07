@@ -91,13 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // ========== ACTIVE NAV LINK ==========
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    $$('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
-            link.classList.add('active-nav');
-        }
-    });
+   $$('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    const isSpecial = href.startsWith('#') || link.hasAttribute('download') || link.target || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('http');
+    
+    if (!isSpecial && (href.endsWith('.html') || href === 'index.html' || href === '' || href === '/')) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            animateTransition(link, href);
+        });
+    }
+});
     
     // ========== CONTACT FORM ==========
     const form = document.getElementById('contactForm');
