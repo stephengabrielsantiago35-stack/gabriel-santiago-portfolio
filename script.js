@@ -62,18 +62,17 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => { window.location.href = targetUrl; }, 800);
         };
         
-        $$('a[href]').forEach(link => {
-            const url = new URL(link.href, window.location.origin);
-            const isInternal = url.origin === window.location.origin;
-            const isSpecial = link.href.startsWith('#') || link.hasAttribute('download') || link.target || link.href.startsWith('mailto:') || link.href.startsWith('tel:') || link.href.startsWith('https://wa.me');
-            
-            if (isInternal && !isSpecial) {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    animateTransition(link, link.href);
-                });
-            }
+       $$('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    const isSpecial = href.startsWith('#') || link.hasAttribute('download') || link.target || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('http');
+    
+    if (!isSpecial && (href.endsWith('.html') || href === 'index.html' || href === '' || href === '/')) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            animateTransition(link, href);
         });
+    }
+});
         
         window.addEventListener('pageshow', (event) => {
             if (event.persisted) {
