@@ -91,15 +91,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-   $$('a[href]').forEach(link => {
+    // ========== ACTIVE NAV LINK ==========
+const currentPath = window.location.pathname;
+const currentFile = currentPath.split('/').pop() || 'index.html';
+
+console.log('Current path:', currentPath);
+console.log('Current file:', currentFile);
+
+$$('.nav-links a').forEach(link => {
     const href = link.getAttribute('href');
-    const isSpecial = href.startsWith('#') || link.hasAttribute('download') || link.target || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('https://wa.me') || href.startsWith('http');
     
-    if (!isSpecial && (href.endsWith('.html') || href === 'index.html' || href === '' || href === '/')) {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            animateTransition(link, href);
-        });
+    if (!href || href.startsWith('http') || href.startsWith('#')) return;
+    
+    if (href === currentFile) {
+        link.classList.add('active-nav');
+    }
+    else if (currentPath.includes(href) && href !== 'index.html') {
+        link.classList.add('active-nav');
+    }
+    else if ((href === 'index.html' || href === '/') && (currentFile === 'index.html' || currentPath.endsWith('/'))) {
+        link.classList.add('active-nav');
     }
 });
     
