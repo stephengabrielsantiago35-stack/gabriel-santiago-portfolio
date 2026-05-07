@@ -92,55 +92,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // ========== ACTIVE NAV LINK ==========
-const setActiveNavLink = () => {
-    const currentPath = window.location.pathname;
-    console.log('Setting active nav for path:', currentPath);
-    
-    let currentPage = '';
-    
-    if (currentPath === '/' || currentPath === '' || currentPath.endsWith('/index.html') || currentPath.endsWith('/')) {
-        currentPage = 'index.html';
-    } else {
-        const parts = currentPath.split('/');
-        let lastPart = parts[parts.length - 1];
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        let currentPath = window.location.pathname;
         
-        if (lastPart === '') {
-            lastPart = parts[parts.length - 2];
+        let currentFile = currentPath.split('/').pop();
+        
+        if (currentFile === '' || currentPath === '/') {
+            currentFile = 'index.html';
         }
         
-        currentPage = lastPart;
-    }
-    
-    console.log('Current page detected:', currentPage);
-    
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active-nav');
-    });
-    
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        const href = link.getAttribute('href');
+        console.log('Setting active nav for:', currentFile);
         
-        if (href === currentPage) {
-            link.classList.add('active-nav');
-            console.log('Active nav set for:', href);
-        }
-        else if ((currentPage === 'index.html' || currentPath === '/' || currentPath === '') && href === 'index.html') {
-            link.classList.add('active-nav');
-            console.log('Active nav set for homepage');
-        }
-        else if (href === currentPage.replace('.html', '') && currentPage !== 'index.html') {
-            link.classList.add('active-nav');
-            console.log('Active nav set for:', href, '(no extension match)');
-        }
-    });
-};
-
-// Run when page loads
-setActiveNavLink();
-
-// Also run after any navigation (for page transitions)
-const observer = new MutationObserver(() => {
-    setActiveNavLink();
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            const href = link.getAttribute('href');
+            link.classList.remove('active-nav');
+            
+            if (href === currentFile) {
+                link.classList.add('active-nav');
+            }
+            if (currentFile === 'index.html' && href === 'index.html') {
+                link.classList.add('active-nav');
+            }
+        });
+    }, 100);
 });
 observer.observe(document.body, { childList: true, subtree: true });
     
