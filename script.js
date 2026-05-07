@@ -91,33 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // ========== ACTIVE NAV LINK  ==========
-const setActiveNav = () => {
-    let currentPath = window.location.pathname;
-    
-    let currentPage = currentPath.split('/').pop() || 'index';
-    currentPage = currentPage.replace('.html', '');
-    if (currentPage === '') currentPage = 'index';
-    
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active-nav');
-        
-        let href = link.getAttribute('href');
-        if (!href) return;
-        
-        let hrefPage = href.replace('.html', '');
-        
-        if (hrefPage === currentPage) {
+    // ========== ACTIVE NAV LINK ==========
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    $$('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
             link.classList.add('active-nav');
         }
     });
-};
-
-setActiveNav();
-
-if (typeof window !== 'undefined') {
-    window.addEventListener('load', setActiveNav);
-}
     
     // ========== CONTACT FORM ==========
     const form = document.getElementById('contactForm');
