@@ -95,43 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
 const setActiveNav = () => {
     let currentPath = window.location.pathname;
     
-    let currentPage = currentPath.replace(/^\/+|\/+$/g, ''); // Remove leading/trailing slashes
-    if (currentPage === '') currentPage = 'index';
+    let currentPage = currentPath.split('/').pop() || 'index';
     currentPage = currentPage.replace('.html', '');
-    
-    console.log('Current page detected:', currentPage);
+    if (currentPage === '') currentPage = 'index';
     
     document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active-nav');
+        
         let href = link.getAttribute('href');
         if (!href) return;
         
-        let linkPage = href.replace('.html', '');
+        let hrefPage = href.replace('.html', '');
         
-        link.classList.remove('active-nav');
-        
-        if (linkPage === currentPage) {
+        if (hrefPage === currentPage) {
             link.classList.add('active-nav');
-            console.log('Active nav set for:', href);
-        }
-        if ((currentPage === 'index' || currentPage === '') && linkPage === 'index') {
-            link.classList.add('active-nav');
-            console.log('Active nav set for homepage');
         }
     });
 };
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setActiveNav);
-} else {
-    setActiveNav();
+setActiveNav();
+
+if (typeof window !== 'undefined') {
+    window.addEventListener('load', setActiveNav);
 }
-
-window.addEventListener('load', setActiveNav);
-
-const observer = new MutationObserver(() => {
-    setActiveNav();
-});
-observer.observe(document.body, { childList: true, subtree: true });
     
     // ========== CONTACT FORM ==========
     const form = document.getElementById('contactForm');
