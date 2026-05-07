@@ -91,13 +91,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // ========== ACTIVE NAV LINK ==========
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    $$('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPage || (!currentPage && link.getAttribute('href') === 'index.html')) {
-            link.classList.add('active-nav');
-        }
-    });
+    // ========== ACTIVE NAV LINK  ==========
+const currentPath = window.location.pathname;
+const currentFile = currentPath.split('/').pop() || 'index.html';
+
+console.log('Current path:', currentPath);
+console.log('Current file:', currentFile);
+
+$$('.nav-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    
+    if (!href || href.startsWith('http') || href.startsWith('#')) return;
+    
+    if (href === currentFile) {
+        link.classList.add('active-nav');
+    }
+    else if (currentPath.includes(href) && href !== 'index.html') {
+        link.classList.add('active-nav');
+    }
+    else if ((href === 'index.html' || href === '/') && (currentFile === 'index.html' || currentPath.endsWith('/'))) {
+        link.classList.add('active-nav');
+    }
+});
     
     // ========== CONTACT FORM ==========
     const form = document.getElementById('contactForm');
