@@ -92,24 +92,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // ========== ACTIVE NAV LINK  ==========
-const currentPath = window.location.pathname;
-const currentFile = currentPath.split('/').pop() || 'index.html';
-
-console.log('Current path:', currentPath);
-console.log('Current file:', currentFile);
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const currentPageClean = currentPage.replace('.html', '');
 
 $$('.nav-links a').forEach(link => {
     const href = link.getAttribute('href');
+    const hrefClean = href.replace('.html', '');
     
-    if (!href || href.startsWith('http') || href.startsWith('#')) return;
-    
-    if (href === currentFile) {
-        link.classList.add('active-nav');
-    }
-    else if (currentPath.includes(href) && href !== 'index.html') {
-        link.classList.add('active-nav');
-    }
-    else if ((href === 'index.html' || href === '/') && (currentFile === 'index.html' || currentPath.endsWith('/'))) {
+    if (hrefClean === currentPageClean || 
+        (currentPageClean === '' && hrefClean === 'index') ||
+        (currentPageClean === 'index' && hrefClean === '')) {
         link.classList.add('active-nav');
     }
 });
