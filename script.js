@@ -92,32 +92,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // ========== ACTIVE NAV LINK ==========
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        let currentPath = window.location.pathname;
+const setActiveNav = () => {
+    let currentPath = window.location.pathname;
+    
+    let currentPage = currentPath.split('/').pop();
+    if (currentPage === '' || currentPath === '/') currentPage = 'index';
+    currentPage = currentPage.replace('.html', '');
+    
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active-nav');
         
-        let currentFile = currentPath.split('/').pop();
+        let href = link.getAttribute('href');
+        if (!href) return;
         
-        if (currentFile === '' || currentPath === '/') {
-            currentFile = 'index.html';
+        let hrefPage = href.replace('.html', '');
+        
+        if (hrefPage === currentPage) {
+            link.classList.add('active-nav');
         }
-        
-        console.log('Setting active nav for:', currentFile);
-        
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            const href = link.getAttribute('href');
-            link.classList.remove('active-nav');
-            
-            if (href === currentFile) {
-                link.classList.add('active-nav');
-            }
-            if (currentFile === 'index.html' && href === 'index.html') {
-                link.classList.add('active-nav');
-            }
-        });
-    }, 100);
-});
-observer.observe(document.body, { childList: true, subtree: true });
+        if ((currentPage === 'index' || currentPage === '') && hrefPage === 'index') {
+            link.classList.add('active-nav');
+        }
+    });
+};
+
+setActiveNav();
+window.addEventListener('load', setActiveNav);
     
     // ========== CONTACT FORM ==========
     const form = document.getElementById('contactForm');
