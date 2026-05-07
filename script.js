@@ -92,27 +92,57 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // ========== ACTIVE NAV LINK ==========
-const currentPath = window.location.pathname;
-const currentFile = currentPath.split('/').pop() || 'index.html';
-
-console.log('Current path:', currentPath);
-console.log('Current file:', currentFile);
-
-$$('.nav-links a').forEach(link => {
-    const href = link.getAttribute('href');
+const setActiveNavLink = () => {
+    const currentPath = window.location.pathname;
+    console.log('Setting active nav for path:', currentPath);
     
-    if (!href || href.startsWith('http') || href.startsWith('#')) return;
+    let currentPage = '';
     
-    if (href === currentFile) {
-        link.classList.add('active-nav');
+    if (currentPath === '/' || currentPath === '' || currentPath.endsWith('/index.html') || currentPath.endsWith('/')) {
+        currentPage = 'index.html';
+    } else {
+        const parts = currentPath.split('/');
+        let lastPart = parts[parts.length - 1];
+        
+        if (lastPart === '') {
+            lastPart = parts[parts.length - 2];
+        }
+        
+        currentPage = lastPart;
     }
-    else if (currentPath.includes(href) && href !== 'index.html') {
-        link.classList.add('active-nav');
-    }
-    else if ((href === 'index.html' || href === '/') && (currentFile === 'index.html' || currentPath.endsWith('/'))) {
-        link.classList.add('active-nav');
-    }
+    
+    console.log('Current page detected:', currentPage);
+    
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active-nav');
+    });
+    
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        const href = link.getAttribute('href');
+        
+        if (href === currentPage) {
+            link.classList.add('active-nav');
+            console.log('Active nav set for:', href);
+        }
+        else if ((currentPage === 'index.html' || currentPath === '/' || currentPath === '') && href === 'index.html') {
+            link.classList.add('active-nav');
+            console.log('Active nav set for homepage');
+        }
+        else if (href === currentPage.replace('.html', '') && currentPage !== 'index.html') {
+            link.classList.add('active-nav');
+            console.log('Active nav set for:', href, '(no extension match)');
+        }
+    });
+};
+
+// Run when page loads
+setActiveNavLink();
+
+// Also run after any navigation (for page transitions)
+const observer = new MutationObserver(() => {
+    setActiveNavLink();
 });
+observer.observe(document.body, { childList: true, subtree: true });
     
     // ========== CONTACT FORM ==========
     const form = document.getElementById('contactForm');
