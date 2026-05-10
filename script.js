@@ -92,32 +92,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // ========== ACTIVE NAV LINK ==========
-const setActiveNav = () => {
-    let currentPath = window.location.pathname;
-    
-    let currentPage = currentPath.split('/').pop();
-    if (currentPage === '' || currentPath === '/') currentPage = 'index';
-    currentPage = currentPage.replace('.html', '');
-    
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active-nav');
+    const setActiveNav = () => {
+        let currentPath = window.location.pathname;
         
-        let href = link.getAttribute('href');
-        if (!href) return;
+        let currentPage = currentPath.split('/').pop();
+        if (currentPage === '' || currentPath === '/') currentPage = 'index';
+        currentPage = currentPage.replace('.html', '');
         
-        let hrefPage = href.replace('.html', '');
-        
-        if (hrefPage === currentPage) {
-            link.classList.add('active-nav');
-        }
-        if ((currentPage === 'index' || currentPage === '') && hrefPage === 'index') {
-            link.classList.add('active-nav');
-        }
-    });
-};
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active-nav');
+            
+            let href = link.getAttribute('href');
+            if (!href) return;
+            
+            let hrefPage = href.replace('.html', '');
+            
+            if (hrefPage === currentPage) {
+                link.classList.add('active-nav');
+            }
+            if ((currentPage === 'index' || currentPage === '') && hrefPage === 'index') {
+                link.classList.add('active-nav');
+            }
+        });
+    };
 
-setActiveNav();
-window.addEventListener('load', setActiveNav);
+    setActiveNav();
+    window.addEventListener('load', setActiveNav);
     
     // ========== CONTACT FORM ==========
     const form = document.getElementById('contactForm');
@@ -626,7 +626,7 @@ window.addEventListener('load', setActiveNav);
     
     // ========== SCROLL REVEAL ==========
     const reveal = () => {
-        $$('.skill-card, .work-card, .testimonial-card, .timeline-item, .preview-item, .faq-card').forEach(el => {
+        $$('.skill-card, .work-card, .timeline-item, .preview-item, .faq-card').forEach(el => {
             if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('revealed');
         });
     };
