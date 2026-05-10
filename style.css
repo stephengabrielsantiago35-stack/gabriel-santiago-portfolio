@@ -803,58 +803,8 @@ video::-webkit-media-controls-enclosure {
     display: none !important;
 }
 
-
 /* ===================================================================
-   11. HOMEPAGE - TESTIMONIALS SECTION
-   =================================================================== */
-.testimonials {
-    padding: 5rem 0;
-    background: #f8fafc;
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial-card {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    border: 1px solid #e2e8f0;
-    transition: 0.2s;
-}
-
-.testimonial-card:hover {
-    border-color: #2FA4E7;
-}
-
-.quote-icon {
-    font-size: 1.8rem;
-    color: #2FA4E7;
-    margin-bottom: 1rem;
-    opacity: 0.6;
-}
-
-.testimonial-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.2rem;
-    color: #2d3748;
-}
-
-.testimonial-author {
-    font-weight: 700;
-    color: #1F4E79;
-    border-top: 1px solid #e2e8f0;
-    padding-top: 1rem;
-    margin-top: 0.5rem;
-}
-
-/* ===================================================================
-   12. PAGE HEADER (Internal Pages)
+   11. PAGE HEADER (Internal Pages)
    =================================================================== */
 .page-header {
     background: #f8fafc;
@@ -876,7 +826,7 @@ video::-webkit-media-controls-enclosure {
 }
 
 /* ===================================================================
-   13. WORK PAGE - PROJECTS GRID
+   12. WORK PAGE - PROJECTS GRID
    =================================================================== */
 .projects-section {
     padding: 3rem 0;
@@ -1021,7 +971,7 @@ video::-webkit-media-controls-enclosure {
 }
 
 /* ===================================================================
-   14. WORK PAGE - IMAGE SLIDERS
+   13. WORK PAGE - IMAGE SLIDERS
    =================================================================== */
 .work-image-slider {
     position: relative;
@@ -1122,8 +1072,9 @@ video::-webkit-media-controls-enclosure {
     border-radius: 3px;
     background: white;
 }
+
 /* ===================================================================
-   15. EXPERIENCE PAGE - TIMELINE & SKILLS
+   14. EXPERIENCE PAGE - TIMELINE & SKILLS
    =================================================================== */
 .experience-section {
     padding: 3rem 0;
@@ -1227,7 +1178,7 @@ video::-webkit-media-controls-enclosure {
 }
 
 /* ===================================================================
-   16. FAQ PAGE
+   15. FAQ PAGE
    =================================================================== */
 .faq-section {
     padding: 3rem 0;
@@ -1402,7 +1353,7 @@ video::-webkit-media-controls-enclosure {
 }
 
 /* ===================================================================
-   17. CONTACT PAGE
+   16. CONTACT PAGE
    =================================================================== */
 .contact-section {
     padding: 3rem 0;
@@ -1657,11 +1608,10 @@ video::-webkit-media-controls-enclosure {
 }
 
 /* ===================================================================
-   18. SCROLL REVEAL ANIMATIONS
+   17. SCROLL REVEAL ANIMATIONS
    =================================================================== */
 .skill-card,
 .work-card,
-.testimonial-card,
 .timeline-item,
 .preview-item,
 .faq-card {
@@ -1672,7 +1622,6 @@ video::-webkit-media-controls-enclosure {
 
 .skill-card.revealed,
 .work-card.revealed,
-.testimonial-card.revealed,
 .timeline-item.revealed,
 .preview-item.revealed,
 .faq-card.revealed {
@@ -1707,7 +1656,7 @@ video::-webkit-media-controls-enclosure {
 }
 
 /* ===================================================================
-   18.5. PAGE TRANSITIONS
+   18. PAGE TRANSITIONS
    =================================================================== */
 
 /* Page Transition Overlay */
