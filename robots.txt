@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://web-programming-assessment-2-website---gabriel-santiago-cc.pages.dev/sitemap.xml
